@@ -15,6 +15,7 @@ public class StatisticsServiceTest {
         long actual = service.findMax(incomesInBillions);
 
         assertEquals(expected, actual);
+
     }
 
 
@@ -40,4 +41,59 @@ public class StatisticsServiceTest {
         assertEquals(expected, actual);
         System.out.println(service.calculateAverageSum(month));
     }
+
+    @Test
+    void shouldCalculateLowAverage() {
+        long[] month = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long expected = 4;
+        long actual = service.calculateLowAverage(month);
+        assertEquals(expected, actual);
+
+
+        System.out.println(service.calculateLowAverage(month));
+    }
+
+    @Test
+    void shouldCalculateUnderAverage() {
+        long[] month = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long expected = 5;
+        long actual = service.calculateUnderAverage(month);
+        assertEquals(expected, actual);
+
+
+        System.out.println(service.calculateUnderAverage(month));
+    }
+
+    @Test
+    void shouldCalculateMaxSumMonth() {
+        long[] month = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long expected = 8;
+        long actual = service.calculateMaxMonth(month);
+        assertEquals(expected, actual);
+
+
+        System.out.println(service.calculateMaxMonth(month));
+    }
+
+    @Test
+    void shouldCalculateMax() {
+        long[] month = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long expected = 20;
+        long actual = service.calculateMax(month);
+        assertEquals(expected, actual);
+
+        System.out.println(service.calculateMax(month));
+    }
+
+    @Test
+    void shouldCalculateMinSumMonth() {
+        long[] month = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long expected = 9;
+        long actual = service.calculateMinMonth(month);
+        assertEquals(expected, actual);
+
+
+        System.out.println(service.calculateMinMonth(month));
+    }
+
 }
